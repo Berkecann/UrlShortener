@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <title>URL Shortener</title>
+    <link rel="icon" href="https://cdn.eclipsed.top/1042184163351154688/shortener/favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sora:100,200,300,400,500,600,700,800&amp;display=swap">
+    <script src="https://cdn.eclipsed.top/Assets/javascript/lib/jquery-3.1.1.min.js"></script>
+    <style>
+        a:link {
+            color: rgb(50,150,254);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body style="background-color: #1f1f1f;align-items: center;display: flex;justify-content: center;margin-top: 350px;">
+    <div style="display: flex; flex-direction: column; align-items: center; margin: auto;">
+        <h1 style="color: white; font-family: Sora, Arial;">URL Shortener</h1><br>
+        <input id="tbURL" type="text" placeholder="URL" style="font-family: Sora, Arial; box-shadow: 0 6px 10px 0 rgb(25 25 25); border: 0; width: 700px; height: 40px; outline: 0; font-size: 20px; border-radius: 21px; padding-left: 12px; padding-right: 12px;">
+        
+        <div style="margin-right: 370px;margin-top: 5px;display: flex;align-items: center;">
+            <p style="Color: white; font-family: Sora;">Limited Use?</p>
+            <input id="cbLimitedUse" type="checkbox">
+            <input id="tbLimitedUse" type="number" style="font-family: Sora, Arial;box-shadow: 0 6px 10px 0 rgb(25 25 25);border: 0;width: 100px;height: 20px;outline: 0;font-size: 16px;" hidden>
+        </div>
+        <div style="margin-right: 350px; margin-top: 5px; display: flex; align-items: center;">
+            <p style="Color: white; font-family: Sora;">Expires?</p>
+            <input id="cbExpires" type="checkbox">
+            <input id="dtExpires" type="datetime-local" hidden>
+        </div>
+
+        <button id="btnShorten" style="margin-top: 5%; margin-left: 40%;" hidden="">Shorten</button>
+        <label for="btnShorten"
+            style="margin-top: 1rem;margin-left: 40%;background: rgb(79, 50, 169);color: white;padding: 0.5rem;font-family: sans-serif;border-radius: 0.5rem;cursor: pointer;margin-left: 635px;padding-right: 15px;padding-left: 15px;">Shorten</label>
+    
+            <p id="status" style="Color: white; font-family: Sora;" hidden></p>
+    </div>
+
+    <script src="https://cdn.eclipsed.top/1042184163351154688/shortener/main.js"></script>
+
+</body>
+
+</html>

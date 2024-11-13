@@ -1,0 +1,27 @@
+﻿<html>
+
+<head>
+    <title>Auth - ECLP</title>
+    <link rel="icon" href="https://cdn.eclipsed.top/1042184163351154688/shortener/favicon.ico">
+</head>
+
+<body style="background-color: #1f1f1f;align-items: center;display: flex;justify-content: center;">
+    <div style="display: flex;flex-direction: column;align-items: center;margin: auto;">
+        <h1 style="color: #f1f1f1; font-family: sans-serif;">ECLP - Link Shortener</h1>
+        <i style="color: rgb(137, 137, 137); font-size: 110%; font-family: sans-serif;">Login with api key</i>
+        <div id="apikey-div" class="group" style="margin-top: 5%; margin-bottom: 10%; color: #f1f1f1;">
+            <input type="text" id="input-apikey" required="">
+            <br>
+            <button id="btnAuth" style="margin-top: 5%; margin-left: 40%;" hidden="">Authenticate</button>
+            <br>
+            <label for="btnAuth"
+                style="margin-top: 1rem; margin-left: 40%; background: rgb(79, 50, 169); color: white; padding: 0.5rem; font-family: sans-serif; border-radius: 0.5rem; cursor: pointer;">Authenticate</label>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+       function delay(e){return new Promise((t=>setTimeout(t,e)))}var btnAuth=document.getElementById("btnAuth");async function btnAuthClickevent(){var e=document.getElementById("input-apikey").value;fetch("/api/auth/login/"+e,{method:"GET"}).then((async function(e){const t=document.getElementById("info");null!=t&&t.remove(),e.ok?(document.getElementById("apikey-div").insertAdjacentHTML("afterend",'<a id="info" style="color: Green; font-family: sans-serif;">Valid Key, Redirecting...</a>'),await delay(2e3),location.href="/"):document.getElementById("apikey-div").insertAdjacentHTML("afterend",'<a id="info" style="color: RED; font-family: sans-serif;">Invalid Key</a>')}))}btnAuth.addEventListener("click",btnAuthClickevent);
+    </script>
+</body>
+
+</html>
